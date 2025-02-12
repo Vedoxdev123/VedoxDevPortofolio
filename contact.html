@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Vedox's Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .navbar {
+      height: 100vh;
+      width: 200px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background-color: #333;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .navbar a {
+      padding: 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      width: 100%;
+    }
+    .navbar a:hover {
+      background-color: #555;
+    }
+    .logo {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border-radius: 50%;
+    }
+    .brand-text {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .profile-text {
+      width: 100%;
+      color: rgb(0, 0, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 20px;
+      position: absolute;
+      bottom: 0;
+    }
+    .content {
+      margin-left: 220px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* Align content to the top */
+      text-align: center;
+      min-height: 150vh; /* Adjust this value as needed */
+    }
+    .content h1 {
+      font-size: 44px;
+      color: #333;
+    }
+    .content p {
+      font-size: 24px;
+      color: #666;
+    }
+    .highlight {
+      color: #009688;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .navbar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+      }
+      .logo {
+        width: 50px;
+        height: 50px;
+      }
+      .brand-text {
+        font-size: 20px;
+      }
+      .content {
+        margin-left: 0;
+        padding: 20px;
+      }
+      .content h1 {
+        font-size: 32px;
+      }
+      .content p {
+        font-size: 18px;
+      }
+    }
+    @media (max-width: 480px) {
+      .navbar {
+        flex-direction: column;
+      }
+      .logo {
+        width: 40px;
+        height: 40px;
+      }
+      .brand-text {
+        font-size: 18px;
+      }
+      .content h1 {
+        font-size: 28px;
+      }
+      .content p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <img src="logo.jpg" alt="Logo" class="logo" />
+    <div class="brand-text">Vedox</div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="content">
+    <h1>Contact</h1>
+    <h2>My discord</h2>
+    <p>vedox0507_25260</p>
+  </div>
+
+  <footer>
+    Copyright © 2025 All rights reserved.
+  </footer>
+</body>
+</html>
