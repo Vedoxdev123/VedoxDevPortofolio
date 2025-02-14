@@ -8,11 +8,10 @@
     body {
       margin: 0;
       font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: rgb(255, 241, 216);
+      background-image: url(gradient-dark-dynamic-lines-background_23-2148995950.avif);
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
-      
     }
     .navbar {
       height: 100vh;
@@ -46,12 +45,15 @@
       object-fit: cover;
       margin-bottom: 10px;
       border-radius: 50%;
+      border: 2px solid #009688;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
     .brand-text {
       color: white;
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 20px;
+      text-align: center;
     }
     .profile-text {
       width: 100%;
@@ -72,25 +74,62 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start; /* Align content to the top */
+      justify-content: flex-start;
       text-align: center;
-      min-height: 150vh; /* Adjust this value as needed */
+      min-height: 150vh;
     }
     .content h1 {
       font-size: 44px;
-      color: #333;
-    }
-    .content h2 {
-      font-size: 36px;
-      color: #333;
-    }
-    .content p {
-      font-size: 24px;
-      color: #666;
+      color: #009688;
+      margin-bottom: 20px;
     }
     .highlight {
       color: #009688;
       font-weight: bold;
+    }
+    .logo-container {
+      margin-top: 20px;
+    }
+    .logo-container img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #009688;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    .textbox {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #009688;
+      padding: 30px;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      color: white;
+      flex: 3;
+      margin-right: 20px;
+    }
+    .textbox h2 {
+      font-size: 40px;
+    }
+    .textbox p {
+      font-size: 28px;
+    }
+    .image-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 1000px;
+    }
+    .image-container img {
+      max-width: 30%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      flex: 1;
     }
     footer {
       background-color: #000;
@@ -98,6 +137,21 @@
       text-align: center;
       padding: 10px 0;
       width: 100%;
+    }
+    @media (max-width: 1024px) {
+      .content h1 {
+        font-size: 36px;
+      }
+      .logo-container img {
+        width: 250px;
+        height: 250px;
+      }
+      .textbox h2 {
+        font-size: 34px;
+      }
+      .textbox p {
+        font-size: 24px;
+      }
     }
     @media (max-width: 768px) {
       .navbar {
@@ -109,8 +163,8 @@
         padding: 10px 0;
       }
       .logo {
-        width: 50px;
-        height: 50px;
+        width: 75px;
+        height: 75px;
       }
       .brand-text {
         font-size: 20px;
@@ -125,14 +179,31 @@
       .content p {
         font-size: 18px;
       }
+      .logo-container img {
+        width: 200px;
+        height: 200px;
+      }
+      .textbox h2 {
+        font-size: 28px;
+      }
+      .textbox p {
+        font-size: 20px;
+      }
+      .image-container {
+        flex-direction: column;
+      }
+      .image-container img {
+        max-width: 80%;
+        margin-top: 20px;
+      }
     }
     @media (max-width: 480px) {
       .navbar {
         flex-direction: column;
       }
       .logo {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
       }
       .brand-text {
         font-size: 18px;
@@ -142,6 +213,16 @@
       }
       .content p {
         font-size: 16px;
+      }
+      .logo-container img {
+        width: 150px;
+        height: 150px;
+      }
+      .textbox h2 {
+        font-size: 24px;
+      }
+      .textbox p {
+        font-size: 18px;
       }
     }
   </style>
@@ -156,12 +237,18 @@
   </div>
   <div class="content">
     <h1>Welcome to my Portfolio</h1>
-    <h2>Hi, I am Vedox!</h2>
-    <p>I am a <span class="highlight">Portfolio Maker</span></p>
-    <p>I create great portfolios at affordable prices! &#128521;</p>
-    <p>I love to meet new people even trough texts I ' ll love to share my passion with other people</p>
-    <p>Thanks for Parnership</p>  
-    
+    <div class="logo-container">
+      <img src="your-image.jpg" alt="Portfolio Image" />
+    </div>
+    <div class="image-container">
+      <div class="textbox">
+        <h2>Hi, I am Vedox!</h2>
+        <p>I am a <span class="highlight">Portfolio Maker</span></p>
+        <p>I create great portfolios at affordable prices! &#128521;</p>
+        <p>I love to meet new people even through texts and I'd love to share my passion with others.</p>
+        <p>Thanks for the partnership.</p>
+      </div>
+    </div>
   </div>
 
   <footer>
