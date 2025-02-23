@@ -1,160 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me - Vedox's Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: rgb(255, 241, 216);
-    }
-    .navbar {
-      height: 100vh;
-      width: 200px;
-      position: fixed;
-      left: 0;
-      top: 0;
-      background-color: #333;
-      padding-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .navbar a {
-      padding: 15px;
-      text-decoration: none;
-      font-size: 18px;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s;
-      width: 100%;
-    }
-    .navbar a:hover {
-      background-color: #555;
-    }
-    .logo {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      margin-bottom: 10px;
-      border-radius: 50%;
-    }
-    .brand-text {
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    .profile-text {
-      width: 100%;
-      color: rgb(0, 0, 0);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 16px;
-      font-weight: bold;
-      padding: 20px;
-      position: absolute;
-      bottom: 0;
-    }
-    .content {
-      margin-left: 220px;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start; /* Align content to the top */
-      text-align: center;
-      min-height: 150vh; /* Adjust this value as needed */
-    }
-    .content h1 {
-      font-size: 44px;
-      color: #333;
-    }
-    .content p {
-      font-size: 24px;
-      color: #666;
-    }
-    .highlight {
-      color: #009688;
-      font-weight: bold;
-    }
-    footer {
-      background-color: #000;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      width: 100%;
-    }
-    @media (max-width: 768px) {
-      .navbar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 10px 0;
-      }
-      .logo {
-        width: 50px;
-        height: 50px;
-      }
-      .brand-text {
-        font-size: 20px;
-      }
-      .content {
-        margin-left: 0;
-        padding: 20px;
-      }
-      .content h1 {
-        font-size: 32px;
-      }
-      .content p {
-        font-size: 18px;
-      }
-    }
-    @media (max-width: 480px) {
-      .navbar {
-        flex-direction: column;
-      }
-      .logo {
-        width: 40px;
-        height: 40px;
-      }
-      .brand-text {
-        font-size: 18px;
-      }
-      .content h1 {
-        font-size: 28px;
-      }
-      .content p {
-        font-size: 16px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Vedox's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Space Grotesk', sans-serif;
+            background: #0d0d0d;
+            color: #f0f0f0;
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1), transparent 50%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .navbar {
+            width: 100%;
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+
+        .navbar .logo {
+            width: clamp(40px, 4vw, 50px);
+            height: clamp(40px, 4vw, 50px);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar .logo:hover {
+            transform: rotate(360deg);
+        }
+
+        .navbar .brand-text {
+            color: #00d4ff;
+            font-size: clamp(16px, 2vw, 20px);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: clamp(14px, 1.5vw, 16px);
+            color: #f0f0f0;
+            transition: all 0.3s ease;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            transform: scale(1.05);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            color: #00d4ff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .content {
+            padding: clamp(80px, 10vw, 120px) 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content h1 {
+            font-size: clamp(36px, 8vw, 64px);
+            color: #00d4ff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .photo-container {
+            margin: 40px 0;
+        }
+
+        .photo-container img {
+            width: clamp(180px, 35vw, 300px);
+            height: clamp(180px, 35vw, 300px);
+            border-radius: 50%;
+            border: 4px solid #00d4ff;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .photo-container img:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+        }
+
+        .intro-text {
+            background: rgba(255, 255, 255, 0.03);
+            padding: clamp(20px, 5vw, 40px);
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            max-width: 90%;
+            margin: 0 auto 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .intro-text:hover {
+            transform: translateY(-10px);
+        }
+
+        .intro-text h2 {
+            font-size: clamp(24px, 6vw, 36px);
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            font-size: clamp(16px, 3vw, 18px);
+            color: #d0d0d0;
+        }
+
+        .intro-text .highlight {
+            color: #00d4ff;
+            font-weight: 600;
+            text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+        }
+
+        .skills, .experience {
+            background: rgba(255, 255, 255, 0.03);
+            padding: clamp(20px, 5vw, 40px);
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            max-width: 90%;
+            margin: 0 auto 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skills:hover, .experience:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .skills h3, .experience h3 {
+            font-size: clamp(24px, 5vw, 32px);
+            color: #00d4ff;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .skills ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skills ul li {
+            font-size: clamp(15px, 2.5vw, 18px);
+            color: #e0e0e0;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 212, 255, 0.05));
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .skills ul li::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(0, 212, 255, 0.4);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+            z-index: 0;
+        }
+
+        .skills ul li:hover::before {
+            width: 300%;
+            height: 300%;
+        }
+
+        .skills ul li:hover {
+            color: #fff;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(0, 212, 255, 0.15));
+            border-color: rgba(0, 212, 255, 0.8);
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .skills ul li span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .experience p {
+            font-size: clamp(16px, 3vw, 18px);
+            color: #d0d0d0;
+        }
+
+        footer {
+            background: rgba(20, 20, 20, 0.95);
+            color: #888;
+            text-align: center;
+            padding: clamp(15px, 2vw, 20px);
+            font-size: clamp(12px, 1.5vw, 14px);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .navbar-content {
+                padding: 10px 15px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(20, 20, 20, 0.98);
+                backdrop-filter: blur(15px);
+                padding: 20px 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 15px 20px;
+                font-size: 18px;
+                width: 100%;
+                text-align: center;
+                transition: background 0.3s ease;
+            }
+
+            .nav-links a:hover {
+                background: rgba(0, 212, 255, 0.3);
+                transform: none;
+            }
+
+            .content {
+                padding: 70px 15px 20px;
+            }
+
+            .skills ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .navbar {
+                padding: 20px 0;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .content {
+                padding-top: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar-content {
+                padding: 10px;
+            }
+
+            .nav-links a {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+
+            .skills ul li {
+                padding: 12px 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="navbar">
-    <img src="logo.jpg" alt="Logo" class="logo" />
-    <div class="brand-text">Vedox</div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  <div class="content">
-    <h1>About Me</h1>
-    <p>Hi, I am an experienced HTML and CSS developer. My mission is to make you the best portfolio for cheap prices! 
-    </p>
-    <p></p>
-  </div>
-
-  <footer>
-    Copyright © 2025 All rights reserved.
-  </footer>
+    <div class="navbar">
+        <div class="navbar-content">
+            <div style="display: flex; align-items: center;">
+                <img src="logo.jpg" alt="Logo" class="logo" />
+                <div class="brand-text">Vedox</div>
+            </div>
+            <button class="hamburger">☰</button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h1>About Me</h1>
+        <div class="photo-container">
+            <img src="logo.jpg" alt="Your Photo" />
+        </div>
+        <div class="intro-text">
+            <h2>Hi, I'm Vedox!</h2>
+            <p class="highlight">We shape and activate brands through insight, vision, and emotion.</p>
+            <p>My mission is to make you the best portfolio for cheap prices!</p>
+            <p>I am an experienced HTML and CSS developer passionate about creating stunning portfolios and websites that stand out. With a keen eye for design and attention to detail, I strive to deliver projects that exceed expectations. I love to collaborate with clients to bring their vision to life and help them achieve their online goals.</p>
+            <p>Thank you for visiting my portfolio. I look forward to working with you and helping you create something amazing!</p>
+        </div>
+        <div class="skills">
+            <h3>My Skills</h3>
+            <ul>
+                <li><span>HTML</span></li>
+                <li><span>CSS</span></li>
+                <li><span>JavaScript</span></li>
+                <li><span>Responsive Design</span></li>
+                <li><span>Web Performance Optimization</span></li>
+            </ul>
+        </div>
+        <div class="experience">
+            <h3>Experience</h3>
+            <p>With over 3 years of experience in web development. I have expertise in HTML and CSS that allows me to create responsive and visually appealing websites that provide a seamless user experience.</p>
+        </div>
+    </div>
+    <footer>Copyright © 2025 All rights reserved.</footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
