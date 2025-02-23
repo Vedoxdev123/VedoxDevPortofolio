@@ -1,260 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vedox's Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-image: url(gradient-dark-dynamic-lines-background_23-2148995950.avif);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-    }
-    .navbar {
-      height: 100vh;
-      width: 200px;
-      position: fixed;
-      left: 0;
-      top: 0;
-      background-color: #333;
-      padding-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .navbar a {
-      padding: 15px;
-      text-decoration: none;
-      font-size: 18px;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s;
-      width: 100%;
-    }
-    .navbar a:hover {
-      background-color: #555;
-    }
-    .logo {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      margin-bottom: 10px;
-      border-radius: 50%;
-      border: 2px solid #009688;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-    .brand-text {
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .profile-text {
-      width: 100%;
-      color: rgb(0, 0, 0);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 16px;
-      font-weight: bold;
-      padding: 20px;
-      position: absolute;
-      bottom: 0;
-    }
-    .content {
-      margin-left: 220px;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      text-align: center;
-      min-height: 150vh;
-    }
-    .content h1 {
-      font-size: 44px;
-      color: #009688;
-      margin-bottom: 20px;
-    }
-    .highlight {
-      color: #009688;
-      font-weight: bold;
-    }
-    .logo-container {
-      margin-top: 20px;
-    }
-    .logo-container img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid #009688;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-    .textbox {
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid #009688;
-      padding: 30px;
-      border-radius: 10px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      color: white;
-      flex: 3;
-      margin-right: 20px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .textbox h2 {
-      font-size: 40px;
-    }
-    .textbox p {
-      font-size: 28px;
-    }
-    .image-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: row;
-      margin-top: 20px;
-      width: 100%;
-      max-width: 1000px;
-    }
-    .image-container img {
-      max-width: 30%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      flex: 1;
-    }
-    footer {
-      background-color: #000;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      width: 100%;
-    }
-    @media (max-width: 1024px) {
-      .content h1 {
-        font-size: 36px;
-      }
-      .logo-container img {
-        width: 250px;
-        height: 250px;
-      }
-      .textbox h2 {
-        font-size: 34px;
-      }
-      .textbox p {
-        font-size: 24px;
-      }
-    }
-    @media (max-width: 768px) {
-      .navbar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 10px 0;
-      }
-      .logo {
-        width: 75px;
-        height: 75px;
-      }
-      .brand-text {
-        font-size: 20px;
-      }
-      .content {
-        margin-left: 0;
-        padding: 20px;
-      }
-      .content h1 {
-        font-size: 32px;
-      }
-      .content p {
-        font-size: 18px;
-      }
-      .logo-container img {
-        width: 200px;
-        height: 200px;
-      }
-      .textbox h2 {
-        font-size: 28px;
-      }
-      .textbox p {
-        font-size: 20px;
-      }
-      .image-container {
-        flex-direction: column;
-      }
-      .image-container img {
-        max-width: 80%;
-        margin-top: 20px;
-      }
-    }
-    @media (max-width: 480px) {
-      .navbar {
-        flex-direction: column;
-      }
-      .logo {
-        width: 60px;
-        height: 60px;
-      }
-      .brand-text {
-        font-size: 18px;
-      }
-      .content h1 {
-        font-size: 28px;
-      }
-      .content p {
-        font-size: 16px;
-      }
-      .logo-container img {
-        width: 150px;
-        height: 150px;
-      }
-      .textbox h2 {
-        font-size: 24px;
-      }
-      .textbox p {
-        font-size: 18px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Vedox's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Space Grotesk', sans-serif;
+            background: #0d0d0d; /* Deep black for modern edge */
+            color: #f0f0f0;
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Subtle animated gradient background */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1), transparent 50%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* Navbar */
+        .navbar {
+            width: 100%;
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+
+        .navbar .logo {
+            width: clamp(40px, 4vw, 50px);
+            height: clamp(40px, 4vw, 50px);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar .logo:hover {
+            transform: rotate(360deg); /* Fun PC hover effect */
+        }
+
+        .navbar .brand-text {
+            color: #00d4ff;
+            font-size: clamp(16px, 2vw, 20px);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: clamp(14px, 1.5vw, 16px);
+            color: #f0f0f0;
+            transition: all 0.3s ease;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            transform: scale(1.05); /* Subtle pop on PC */
+        }
+
+        /* Hamburger Menu for Mobile */
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            color: #00d4ff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: clamp(80px, 10vw, 120px) 20px 20px; /* Extra top padding for fixed navbar */
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content h1 {
+            font-size: clamp(36px, 8vw, 64px);
+            color: #00d4ff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .photo-container {
+            margin: 40px 0;
+        }
+
+        .photo-container img {
+            width: clamp(180px, 35vw, 300px);
+            height: clamp(180px, 35vw, 300px);
+            border-radius: 50%;
+            border: 4px solid #00d4ff;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .photo-container img:hover {
+            transform: scale(1.1) rotate(5deg); /* Playful PC hover */
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+        }
+
+        .intro-text {
+            background: rgba(255, 255, 255, 0.03);
+            padding: clamp(20px, 5vw, 40px);
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            max-width: 90%;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+
+        .intro-text:hover {
+            transform: translateY(-10px); /* Lift effect on PC */
+        }
+
+        .intro-text h2 {
+            font-size: clamp(24px, 6vw, 36px);
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            font-size: clamp(16px, 3vw, 18px);
+            color: #d0d0d0;
+        }
+
+        .intro-text .highlight {
+            color: #00d4ff;
+            font-weight: 600;
+            text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+        }
+
+        footer {
+            background: rgba(20, 20, 20, 0.95);
+            color: #888;
+            text-align: center;
+            padding: clamp(15px, 2vw, 20px);
+            font-size: clamp(12px, 1.5vw, 14px);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 0;
+            }
+
+            .navbar-content {
+                padding: 10px 15px;
+                justify-content: space-between;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none; /* Hidden by default on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(20, 20, 20, 0.95);
+                backdrop-filter: blur(10px);
+                padding: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex; /* Shown when hamburger clicked */
+            }
+
+            .nav-links a {
+                padding: 15px;
+                font-size: 18px;
+                border-radius: 0;
+            }
+
+            .nav-links a:hover {
+                transform: none; /* No scale on mobile */
+            }
+
+            .content {
+                padding: 60px 15px 20px;
+            }
+        }
+
+        /* PC Enhancements */
+        @media (min-width: 769px) {
+            .navbar {
+                padding: 20px 0;
+            }
+
+            .nav-links {
+                gap: 20px; /* Space between links */
+            }
+
+            .content {
+                padding-top: 120px; /* More space for larger screens */
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="navbar">
-    <img src="logo.jpg" alt="Logo" class="logo" />
-    <div class="brand-text">Vedox</div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  <div class="content">
-    <h1>Welcome to my Portfolio</h1>
-    <div class="logo-container">
-      <img src="logo.jpg" alt="Portfolio Image" />
+    <div class="navbar">
+        <div class="navbar-content">
+            <div style="display: flex; align-items: center;">
+                <img src="logo.jpg" alt="Logo" class="logo" />
+                <div class="brand-text">Vedox</div>
+            </div>
+            <button class="hamburger">☰</button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
     </div>
-    <div class="image-container">
-      <div class="textbox">
-        <h2>Hi, I am Vedox!</h2>
-        <p>I am a <span class="highlight">Portfolio Maker</span></p>
-        <p>I create great portfolios at affordable prices! &#128521;</p>
-        <p>I love to meet new people even through texts and I'd love to share my passion with others.</p>
-        <p>Thanks for the partnership.</p>
-      </div>
+    <div class="content">
+        <h1>Welcome to My Portfolio</h1>
+        <div class="photo-container">
+            <img src="logo.jpg" alt="Your Photo" />
+        </div>
+        <div class="intro-text">
+            <h2>Hi, I'm Vedox!</h2>
+            <p class="highlight">We shape and activate brands through insight, vision, and emotion.</p>
+            <p>My mission is to make you the best portfolio for cheap prices!</p>
+            <p>I am an experienced HTML and CSS developer passionate about creating stunning portfolios and websites that stand out.</p>
+            <p>Thank you for visiting my portfolio. I look forward to working with you and helping you create something amazing!</p>
+        </div>
     </div>
-  </div>
-
-  <footer>
-    Copyright © 2025 All rights reserved.
-  </footer>
+    <footer>
+        Copyright © 2025 All rights reserved.
+    </footer>
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
